@@ -4,7 +4,7 @@
 
 Você recebeu um arquivo chamado `funcionarios.csv` com informações de colaboradores de uma empresa.
 
-Sua missão é:
+Sua missão é: 
 
 1. **Validar os dados** de cada registro.
 2. **Calcular o bônus final** de cada funcionário válido usando a fórmula:
