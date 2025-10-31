@@ -39,7 +39,7 @@ Os dados inseridos representam envios de e-mail entre usuários com os campos: `
 
 Para subir o ambiente, execute:
 
-```
+```bash
 docker compose up -d
 ```
 
