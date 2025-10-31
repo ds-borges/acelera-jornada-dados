@@ -4,36 +4,41 @@ import statistics
 import os
 
 """
-Processamento de dados de funcionários a partir do arquivo 'funcionarios.csv'.
+Processamento completo de dados de funcionários a partir do arquivo 'funcionarios.csv'.
 
-Este script realiza as seguintes tarefas:
+Este script realiza:
 
-1. Lê e valida os dados dos funcionários com base nas regras:
+1. Leitura e validação dos dados de cada funcionário conforme regras:
    - Nome não pode estar vazio nem conter números.
-   - Área deve estar dentro da lista predefinida.
-   - Salário deve ser número positivo ou zero.
-   - Bônus percentual deve estar entre 0 e 1 (inclusive).
-   
-2. Calcula o bônus final para cada funcionário válido seguindo a fórmula:
-   bonus_final = 1000 + salario * bonus_percentual
+   - Área deve pertencer a uma lista predefinida de áreas válidas.
+   - Salário deve ser um número positivo ou zero.
+   - Bônus percentual deve ser número entre 0 e 1 (inclusive).
 
-3. Agrupa salários por área e calcula a média salarial por área.
+2. Cálculo do bônus final para cada funcionário válido usando a fórmula:
+   bonus_calculado = 1000 + salario * bonus_percentual
 
-4. Identifica os 3 maiores salários para geração do top 3.
+3. Agrupamento dos salários por área e cálculo da média salarial de cada área.
 
-5. Imprime:
-   - Lista de funcionários válidos com bônus calculado.
-   - Lista de registros inválidos com motivo.
-   - KPIs agregados: média salarial por área.
-   - Top 3 maiores salários com seus dados completos.
+4. Identificação dos 3 maiores salários para formar o top 3.
 
-Obs.: Ainda não gera os arquivos CSV ou JSON, mas estrutura os dados para essa finalidade.
+5. Armazenamento dos dados:
+   - Geração de 'relatorio_individual.csv' contendo funcionários válidos com bônus calculado.
+   - Geração de 'erros.csv' com registros inválidos e motivo do erro.
+   - Geração de 'kpis.json' com KPIs agregados, contendo:
+     * salários por área,
+     * média salarial por área,
+     * total geral de bônus pagos,
+     * top 3 funcionários com maiores salários.
+
+6. Preparação do ambiente para criação dos arquivos, verificando/criando diretório 'output'.
 
 Requisitos:
-- arquivo "funcionarios.csv" presente no diretório "data/"
-- encoding UTF-8 para leitura do arquivo
-"""
+- Arquivo 'funcionarios.csv' deve estar no diretório 'data/'.
+- Codificação UTF-8 para leitura e escrita dos arquivos.
+- Python 3.x com módulos padrão csv, json, statistics e os.
 
+Esse código oferece um fluxo completo para validar, processar e gerar relatórios confiáveis e organizados para análise de recursos humanos.
+"""
 
 file_path="data/funcionarios.csv"
 
